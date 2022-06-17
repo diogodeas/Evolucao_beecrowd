@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    std::string entrada;
+    int nEntradas, i, leds;
+    std::cin >> nEntradas;
+    std::cin.ignore();
+    while(nEntradas>0){
+        leds = 0;
+        nEntradas--;
+        getline(std::cin, entrada);
+        for(i=0; i<entrada.length(); i++){
+            switch (entrada[i]) {
+                case '1': 
+                    leds += 2;
+                    break;
+                case '2': case '3': case '5': 
+                    leds += 5;
+                    break;
+                case '4': 
+                    leds += 4;
+                    break;
+                case '6': case '9': case '0': 
+                    leds += 6;
+                    break;
+                case '7': 
+                    leds += 3;
+                    break;
+                case '8': 
+                    leds += 7;
+                    break;
+                default:
+                    break;
+            }
+        }
+        std::cout<< to_string(leds) + " leds\n";
+    }
+    return 0;
+}
