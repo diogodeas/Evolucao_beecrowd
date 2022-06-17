@@ -1,0 +1,14 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <iostream>
+ #include <math.h>
+ #include <iomanip>
+ 
+ int main() {
+    double raio, area;
+    double pi = 3.14159;
+    std:: cin >> raio;
+    area = pow(raio, 2)*pi;
+    std::cout << std::fixed << std::setprecision(4) << "A=" << area << std::endl;
+    return 0;
+ }
