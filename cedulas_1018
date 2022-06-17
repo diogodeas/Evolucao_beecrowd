@@ -1,0 +1,34 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <iostream>
+ #include <math.h>
+ #include <iomanip>
+ 
+ int main() {
+   int entrada, notasde100=0, notasde50=0, notasde5=0, notasde20=0, notasde10=0, notasde2=0, moedasde1=0;
+   int resto;
+   std::cin >> entrada;
+      notasde100 = entrada/100;
+      resto = entrada%100;
+      notasde50 = resto/50;
+      resto = resto%50;
+      notasde20 = resto/20;
+      resto = resto%20;
+      notasde10 = resto/10;
+      resto = resto%10;
+      notasde5 = resto/5;
+      resto = resto%5;
+      notasde2 = resto/2;
+      resto = resto%2;
+      moedasde1 = resto;
+   std::cout << entrada << std::endl;
+   std::cout << notasde100 << " nota(s) de R$ 100,00" << std::endl;
+   std::cout << notasde50 << " nota(s) de R$ 50,00" << std::endl;
+   std::cout << notasde20 << " nota(s) de R$ 20,00" << std::endl;
+   std::cout << notasde10 << " nota(s) de R$ 10,00" << std::endl;
+   std::cout << notasde5 << " nota(s) de R$ 5,00" << std::endl;
+   std::cout << notasde2 << " nota(s) de R$ 2,00" << std::endl;
+   std::cout << moedasde1 << " nota(s) de R$ 1,00" << std::endl;
+   return 0;
+ }
+
