@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+int main(){
+
+    int j, i, entrada, entrada1, entrada2, valor;
+    scanf("%d", &entrada);
+    while(entrada--){
+        scanf("%d %d", &entrada1, &entrada2);
+        for(i=entrada1; i<=entrada2; i++){
+            printf("%d", i);
+        }
+        for(j=entrada2; j>=entrada1; j--){
+            valor = j;
+            while(valor/10!=0){
+                printf("%d", valor%10);
+                valor/=10;
+            }
+            printf("%d", valor%10);
+        }
+        printf("\n");
+    }
+    return 0;
+}
