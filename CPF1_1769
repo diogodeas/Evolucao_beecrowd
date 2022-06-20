@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char cpf[15];
+    int i=0, j, k, soma=0, nmbscpf[11], posicao=0, auxiliar = 0, condicaob1 = 0, condicaob2 = 0, menor = 0;
+    while(fgets(cpf,15,stdin) && menor<10000){ //receber os caracteres do cpf
+        menor++;
+    	getchar();
+        int i=0, soma=0, posicao=0, condicaob1 = 0, condicaob2 = 0, menor = 0;
+        for(i=0; i<strlen(cpf); i++){ // ler a string e pegar somente os numeros por tabela ASCII
+            if(cpf[i]!='.'&&cpf[i]!='-'){
+                auxiliar = (int)cpf[i];
+                nmbscpf[posicao] = (auxiliar-48);
+                posicao++;
+            }
+        }
+        i=1;
+        for(j=0; j<9; j++){ //somar os numeros e multiplicas de acordo com as regras do b1
+            soma+=((nmbscpf[j])*(i));
+            i++;
+        }
+        if(soma%11 == nmbscpf[9] || (soma%11 == 10 && nmbscpf[9] == 0))
+            condicaob1 = 1;
+        i=1;
+        soma = 0;
+        for(k=8; k>=0; k--){ //somar os numeros e multiplicas de acordo com as regras do b2
+            soma+=((nmbscpf[k])*(i));
+            i++;
+        }
+        if(soma%11 == nmbscpf[10] || (soma%11 == 10 && nmbscpf[10] == 0)) 
+                condicaob2 = 1;
+        if(condicaob1 == 1 && condicaob2 == 1){
+            printf("CPF valido\n");
+        }else{
+            printf("CPF invalido\n");
+        }
+    }   
+    return 0;
