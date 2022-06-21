@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    int j, entrada, falantes, qntdrept = 0;
+    scanf("%d", &entrada);
+    while(entrada--){
+        scanf("%d", &falantes);
+        char linguas1[21], linguas[falantes];
+        qntdrept = 0;
+        getchar();
+        for(j=0; j<falantes; j++){
+            gets(linguas);
+            if(j == 0){
+                strcpy(linguas1, linguas);
+            }
+            if(strcmp(linguas1, linguas) == 0){
+                qntdrept++;
+            }
+        }
+        if(qntdrept++ == falantes){
+            puts(linguas1);
+        }else{
+            printf("ingles\n");
+        }
+    }
+    return 0;
+}
