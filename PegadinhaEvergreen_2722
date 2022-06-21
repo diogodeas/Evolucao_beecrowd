@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char mistura1[101], mistura2[101], nome[201];
+    int entrada, i, j;
+    scanf("%d", &entrada);
+    getchar();
+    while(entrada--){
+        scanf("%[^\n]s", mistura1);
+        getchar();
+        scanf("%[^\n]s", mistura2);
+        getchar();
+        for(i=0, j=0; i<strlen(mistura1); i+=2, j+=4){
+          nome[j] = mistura1[i];
+          nome[j+1] = mistura1[i+1];
+          nome[j+2] = mistura2[i];
+          nome[j+3] = mistura2[i+1];
+        }
+        nome[j + 4] = '\0';
+        printf("%s\n", nome);
+        for(i=0; i<=201; i++){
+            nome[i] = '\0';
+        }
+    }
+      return 0;
+    }
