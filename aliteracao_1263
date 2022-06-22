@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(){
+  char string[5001], primeirasletras;
+  int i, aliteracoes, norepeat; // 1 = pode somar; 0 = não pode somar
+  
+  while(gets(string)){
+    for(i = 0; i < strlen(string); i++){
+      string[i] = tolower(string[i]);
+    }
+
+    aliteracoes = 0;
+    norepeat = 1;
+    for(i = 0; i < strlen(string); i++){
+      if(i == 0){
+        primeirasletras = string[i];
+      }
+      else{
+        if(string[i-1] == ' ' && string[i] != ' '){
+          if(string[i] == primeirasletras){
+          if(norepeat == 1){
+            aliteracoes++;
+            norepeat = 0;
+            }
+          }else{
+            primeirasletras = string[i];
+            norepeat = 1;
+          }
+        }
+      }
+    }
+    printf("%d\n", aliteracoes);
+    norepeat = 1;
+  }
+  return 0;
+}
