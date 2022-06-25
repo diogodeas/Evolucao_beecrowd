@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main(){
+    int lesmas=0, i, maior=0;
+    while(scanf("%d", &lesmas)!=EOF){
+        int velocidade[lesmas];
+        for(i=0; i<lesmas; i++){
+            scanf("%d", &velocidade[i]);
+        }
+        maior = velocidade[0];
+        for(i=0; i<lesmas; i++){
+            if(velocidade[i] > maior){
+                    maior = velocidade[i];
+            }
+        }
+        if(maior >= 20){
+        printf("3\n");
+        }
+        if(maior >= 10 && maior < 20){
+            printf("2\n");
+        }
+        if(maior < 10){
+            printf("1\n");
+        }
+    }
+    return 0;
+}
