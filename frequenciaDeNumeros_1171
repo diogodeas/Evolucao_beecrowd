@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main(){
+    int i,  j=0, a, entrada, comparados[2000],  repetido=0;
+    scanf("%d", &entrada);
+    int comparacoes[entrada];
+    while(j<entrada){
+        scanf("%d", &comparacoes[j]);
+        j++;
+    }
+    //antes desse for eu preciso colocar as entradas em ordem crescente
+    for (i = 0; i < entrada; ++i){
+        for (j = i + 1; j < entrada; ++j)
+        {
+            if (comparacoes[i] > comparacoes[j])
+            {
+                a =  comparacoes[i];
+                comparacoes[i] = comparacoes[j];
+                comparacoes[j] = a;
+            }
+        }
+    }
+    for(i=0; i<entrada; i++){
+        comparados[i] = comparacoes[i];
+        for(j = 0; j<entrada; j++){
+            if(comparacoes[j] == comparados[i]){ 
+                repetido++;
+            }
+        }
+        if(comparacoes[i] != comparacoes[i+1]){
+            printf("%d aparece %d vez(es)\n", comparados[i], repetido);
+        }
+        repetido = 0;
+    }
+    return 0;
+}
